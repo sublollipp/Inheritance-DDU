@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://814bs330ru50"]
+
+[ext_resource type="PackedScene" uid="uid://bxm46jfl575oh" path="res://mover.tscn" id="1_ghxfa"]
+[ext_resource type="Script" path="res://predator.gd" id="2_mvbkv"]
+
+[node name="Predator" instance=ExtResource("1_ghxfa")]
+script = ExtResource("2_mvbkv")
+
+[node name="Polygon2D" parent="." index="1"]
+color = Color(0.662496, 0.243774, 0, 1)
