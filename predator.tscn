@@ -3,8 +3,17 @@
 [ext_resource type="PackedScene" uid="uid://bxm46jfl575oh" path="res://mover.tscn" id="1_ghxfa"]
 [ext_resource type="Script" path="res://predator.gd" id="2_mvbkv"]
 
-[node name="Predator" instance=ExtResource("1_ghxfa")]
+[node name="Predator" groups=["Predator"] instance=ExtResource("1_ghxfa")]
+collision_layer = 2
 script = ExtResource("2_mvbkv")
 
 [node name="Polygon2D" parent="." index="1"]
 color = Color(0.662496, 0.243774, 0, 1)
+
+[node name="PreyChecker" type="Area2D" parent="." index="2"]
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PreyChecker" index="0"]
+polygon = PackedVector2Array(-5, 5, 5, 5, 5, 0, 0, -4, -5, 0)
+
+[connection signal="body_entered" from="PreyChecker" to="." method="_preyEntered"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://7s1rokradqb6"]
+[gd_scene load_steps=2 format=3 uid="uid://7s1rokradqb6"]
 
-[ext_resource type="PackedScene" uid="uid://814bs330ru50" path="res://predator.tscn" id="1_b1m57"]
-[ext_resource type="PackedScene" uid="uid://dywsu5awml3lq" path="res://prey.tscn" id="2_v4u0v"]
+[ext_resource type="Script" path="res://mover_spawner.gd" id="3_88xe6"]
 
 [node name="MainScene" type="Node2D"]
 
@@ -10,10 +9,10 @@
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(-1, 646, 1152, 650, 1153, -2, -3, 0, 0, -65, 1246, -62, 1250, 737, -127, 747, -120, -4, -4, -2)
 
-[node name="Predator" parent="." instance=ExtResource("1_b1m57")]
-position = Vector2(153, 196)
-scale = Vector2(4.82, 4.82)
+[node name="MoverSpawner" type="Node" parent="."]
+script = ExtResource("3_88xe6")
 
-[node name="Prey" parent="." instance=ExtResource("2_v4u0v")]
-position = Vector2(573, 323)
-scale = Vector2(4.4, 4.4)
+[node name="Predators" type="Node2D" parent="."]
+
+[node name="Preys" type="Node2D" parent="."]
+unique_name_in_owner = true
