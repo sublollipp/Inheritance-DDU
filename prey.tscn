@@ -7,7 +7,9 @@
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("2_bmw1v")
-flugtHastighed = 225
+flugtHastighed = 450
+flugtFarve = Color(0, 1, 0, 1)
 
 [node name="Polygon2D" parent="." index="1"]
+modulate = Color(2, 2, 2, 1)
 color = Color(0.0392157, 1, 1, 1)
